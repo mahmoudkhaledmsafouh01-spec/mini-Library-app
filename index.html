@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Library App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- PARALLAX HERO -->
+  <section class="hero">
+    <div class="parallax layer back"></div>
+    <div class="parallax layer mid"></div>
+    <div class="parallax layer front"></div>
+
+    <div class="hero-center">
+      <h1 class="neon-title">📚 My Library</h1>
+      <p class="hero-sub">Track. Study. Grow.</p>
+
+      <button id="openLogin" class="btn neon-btn">Login</button>
+      <button id="openStats" class="btn neon-btn">Stats</button>
+    </div>
+  </section>
+
+  <!-- CONTROLS -->
+  <section id="controls">
+    <input type="text" id="searchInput" placeholder="Search books…">
+    <select id="filterSelect">
+      <option value="all">All Books</option>
+      <option value="read">Read</option>
+      <option value="unread">Unread</option>
+    </select>
+    <select id="sortSelect">
+      <option value="az">A → Z</option>
+      <option value="za">Z → A</option>
+      <option value="recent">Recently Added</option>
+    </select>
+  </section>
+
+  <!-- CATEGORY TAGS -->
+  <div id="categoryBar"></div>
+
+  <!-- LIBRARY -->
+  <div id="library"></div>
+
+  <!-- ADD BOOK -->
+  <button id="fab">＋</button>
+
+  <!-- LOGIN MODAL -->
+  <dialog id="loginModal" class="modal">
+    <form id="loginForm" method="dialog" class="modal-content">
+      <h2>Login</h2>
+      <input id="username" placeholder="Username" required>
+      <input id="password" type="password" placeholder="Password" required>
+
+      <menu>
+        <button id="loginCancel" type="button" class="btn cancel">Cancel</button>
+        <button id="loginSubmit" type="submit" class="btn save">Login</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- ADD BOOK MODAL -->
+  <dialog id="bookDialog" class="modal">
+    <form id="bookForm" class="modal-content">
+      <h2>Add Book</h2>
+
+      <label>Title</label>
+      <input id="title" required>
+
+      <label>Author</label>
+      <input id="author" required>
+
+      <label>Pages</label>
+      <input id="pages" type="number" required>
+
+      <label>Category</label>
+      <input id="category">
+
+      <label>
+        <input type="checkbox" id="read"> Mark as Read
+      </label>
+
+      <menu>
+        <button id="cancelBtn" type="button" class="btn cancel">Cancel</button>
+        <button type="submit" class="btn save">Save</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- STATS MODAL -->
+  <dialog id="statsModal" class="modal">
+    <div class="modal-content">
+      <h2>Your Stats</h2>
+      <p id="stat-total-books"></p>
+      <p id="stat-read-books"></p>
+      <p id="stat-progress"></p>
+      <p id="stat-categories"></p>
+
+      <menu>
+        <button id="closeStats" class="btn save">Close</button>
+      </menu>
+    </div>
+  </dialog>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <!-- SOUND -->
+ <audio id="pageSound"
+src="data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAACcQCA..."
+></audio>
+
+  <div id="fallingBooks"></div>
+
+  <script type="module" src="controller.js"></script>
+</body>
+</html>

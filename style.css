@@ -1,0 +1,320 @@
+/* ========== GLOBAL RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #eef2f7, #ffffff);
+  color: #222;
+  overflow-x: hidden;
+}
+
+/* DARK MODE */
+body.dark {
+  background: linear-gradient(135deg, #0b0f17, #1c2333);
+  color: #f1f1f1;
+}
+
+/* ========== PARALLAX HERO SECTION ========== */
+.hero {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Only photo2 is used */
+.parallax.layer.back {
+  background: url("img/foto2.png") center / contain no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  top: 0;
+  left: 0;
+  opacity: 0.25;
+  transform: translateZ(-2px) scale(1.4);
+}
+
+.parallax.layer.mid {
+  background: url("img/foto2.png") center / 50% no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+  top: 25px;
+  transform: translateZ(-1px) scale(1.2);
+}
+
+.parallax.layer.front {
+  background: none;
+}
+
+.hero-center {
+  text-align: center;
+  z-index: 10;
+}
+
+.neon-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 8px #ff5ce5, 0 0 16px #ff5ce5;
+}
+
+.hero-sub {
+  opacity: 0.85;
+  margin-bottom: 1.4rem;
+  font-size: 1.2rem;
+}
+
+/* ========== NEON BUTTONS ========== */
+.btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.neon-btn {
+  color: white;
+  background: #8b5cf6;
+  box-shadow:
+    0 0 10px #8b5cf6,
+    0 0 20px #7c3aed;
+  transition: 0.25s ease;
+}
+
+.neon-btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 12px #a78bfa,
+    0 0 25px #7c3aed;
+}
+.neon-hover {
+  transition: 0.25s ease;
+}
+
+.neon-hover:hover {
+  box-shadow: 0 0 12px #a78bfa, 0 0 25px #7c3aed;
+  transform: translateY(-5px);
+}
+
+
+/* ========== CONTROLS ========== */
+#controls {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#controls input,
+#controls select {
+  padding: 0.7rem 1rem;
+  background: rgba(255,255,255,0.6);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  font-size: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+body.dark #controls input,
+body.dark #controls select {
+  background: rgba(40,40,40,0.5);
+  color: white;
+}
+
+/* ========== CATEGORY BAR ========== */
+#categoryBar {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-top: 1.3rem;
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  background: #f0f0ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-tag:hover {
+  background: #dcdcff;
+}
+
+/* Dark mode */
+body.dark .category-tag {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ========== LIBRARY GRID ========== */
+#library {
+  margin: 2rem auto;
+  width: 92%;
+  max-width: 1200px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+  gap: 1.6rem;
+}
+
+/* BOOK CARD */
+.book-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: 0.25s;
+}
+
+body.dark .book-card {
+  background: rgba(30,30,40,0.85);
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+/* PROGRESS BAR */
+.progress-box {
+  height: 8px;
+  background: #ddd;
+  border-radius: 20px;
+  margin-top: 0.8rem;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #4ade80;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* CARD BUTTONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.read-btn,
+.del-btn {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.read-btn {
+  background: #22c55e;
+}
+.del-btn {
+  background: #ef4444;
+}
+
+/* ========== FAB BUTTON ========== */
+#fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  background: #4f46e5;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.9rem 1.2rem;
+
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  transition: 0.25s;
+}
+
+#fab:hover {
+  transform: scale(1.15);
+}
+
+/* ========== MODALS ========== */
+.modal {
+  border: none;
+  padding: 0;
+  border-radius: 20px;
+  width: 420px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(18px);
+  animation: modalPop 0.25s ease;
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.85); opacity: 0 }
+  100% { transform: scale(1); opacity: 1 }
+}
+
+.modal-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* DARK MODE FOR MODALS */
+body.dark .modal {
+  background: rgba(30,30,40,0.9);
+  color: white;
+}
+
+/* ========== TOAST ========== */
+#toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: black;
+  color: white;
+  padding: 0.9rem 1.3rem;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* ========== FALLING BOOKS ========== */
+#fallingBooks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.falling-book {
+  position: absolute;
+  width: 32px;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100px) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(360deg); }
+}
